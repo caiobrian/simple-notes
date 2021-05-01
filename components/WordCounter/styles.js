@@ -11,4 +11,5 @@ export const Counter = styled.p`
   width: 100px;
   font-size: 1.1rem;
   color: #393A3C;
+  margin-top: 5px;
 `
