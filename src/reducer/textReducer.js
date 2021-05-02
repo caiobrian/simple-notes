@@ -9,8 +9,8 @@ export const textReducer = (state, action) => {
       return { ...state, title: action.payload }
     case 'WRITE_BODY':
       return { ...state, body: action.payload }
-    case 'LISTEN_STATE':
-      return state
+    case 'RESET':
+      return { ...initialTextState }
     default:
       return state
   }
