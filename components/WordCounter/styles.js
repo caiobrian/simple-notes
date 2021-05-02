@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Container = styled.div`
   width: 700px;
@@ -10,6 +10,6 @@ export const Container = styled.div`
 export const Counter = styled.p`
   width: 100px;
   font-size: 1.1rem;
-  color: #393A3C;
+  color: #393a3c;
   margin-top: 5px;
 `

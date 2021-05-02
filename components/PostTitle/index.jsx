@@ -5,10 +5,11 @@ import * as S from './styles'
 const PostTitle = () => {
   const [state, dispatch] = useStateValue()
 
-  const handleTitle = (e) => dispatch({
-    type: 'WRITE_TITLE',
-    payload: e.target.value
-  })
+  const handleTitle = (e) =>
+    dispatch({
+      type: 'WRITE_TITLE',
+      payload: e.target.value
+    })
 
   return (
     <S.Container>

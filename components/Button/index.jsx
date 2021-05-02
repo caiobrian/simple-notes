@@ -1,6 +1,6 @@
-import { Container } from './styles';
+import { Container } from './styles'
 
-const Button = ({handleClick, disabled, color, children, type}) => {
+const Button = ({ handleClick, disabled, color, children, type }) => {
   return (
     <Container
       onClick={handleClick}
@@ -13,4 +13,4 @@ const Button = ({handleClick, disabled, color, children, type}) => {
   )
 }
 
-export default Button;
+export default Button

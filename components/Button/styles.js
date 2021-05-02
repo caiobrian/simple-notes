@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Container = styled.button`
   padding: 12px 28px;
@@ -6,7 +6,7 @@ export const Container = styled.button`
   font-size: 1.4rem;
   border: none;
   border-radius: 5px;
-  background-color: #17A9FB;
+  background-color: #17a9fb;
   display: flex;
   align-items: center;
   justify-content: center;

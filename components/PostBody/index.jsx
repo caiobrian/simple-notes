@@ -4,10 +4,11 @@ import * as S from './styles'
 
 const PostBody = () => {
   const [state, dispatch] = useStateValue()
-  const handleBody = (e) => dispatch({
-    type: 'WRITE_BODY',
-    payload: e.target.value
-  })
+  const handleBody = (e) =>
+    dispatch({
+      type: 'WRITE_BODY',
+      payload: e.target.value
+    })
 
   return (
     <S.Container>
