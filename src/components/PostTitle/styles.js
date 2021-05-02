@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import TextareaAutosize from 'react-textarea-autosize'
 
 export const Container = styled.div`
@@ -6,22 +6,24 @@ export const Container = styled.div`
 `
 
 export const TextArea = styled(TextareaAutosize)`
-  font-family: 'Poppins', sans-serif;
-  min-height: 60px;
-  background: transparent;
-  padding: 0;
-  margin: 0;
-  border: none;
-  outline: none;
-  width: 100%;
-  box-shadow: none;
-  resize: none;
-  transition: none;
-  font-size: 4rem;
-  font-weight: 700;
-  -webkit-appearance: none;
+  ${({ theme }) => css`
+    min-height: 60px;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    width: 100%;
+    box-shadow: none;
+    resize: none;
+    transition: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: ${theme.font.sizes.huge};
+    font-weight: ${theme.font.bold};
+    -webkit-appearance: none;
 
-  &::-webkit-scrollbar {
-    display: none;
-  }
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  `}
 `

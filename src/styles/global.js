@@ -15,7 +15,7 @@ const GlobalStyles = createGlobalStyle`
     }
 
     body {
-      font-family: ${theme.font.family};
+      font-family: 'Poppins', sans-serif;
       font-size: ${theme.font.sizes.medium};
     }
   `}
