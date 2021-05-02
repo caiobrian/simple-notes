@@ -1,19 +1,17 @@
-import { useStateValue } from '../../contexts/state'
+import { useRecoilState } from 'recoil'
+import { noteBodyState } from '../../atoms/notes'
 
 import * as S from './styles'
 
-const PostBody = () => {
-  const [state, dispatch] = useStateValue()
-  const handleBody = (e) =>
-    dispatch({
-      type: 'WRITE_BODY',
-      payload: e.target.value
-    })
+const NoteBody = () => {
+  const [noteTitleEdit, setNoteTitleEdit] = useRecoilState(noteBodyState)
+
+  const handleBody = (e) => setNoteTitleEdit(e.target.value)
 
   return (
     <S.Container>
       <S.Body
-        value={state.body}
+        value={noteTitleEdit}
         onChange={handleBody}
         placeholder="Escreva seu texto aqui..."
         type="text"
@@ -27,4 +25,4 @@ const PostBody = () => {
   )
 }
 
-export default PostBody
+export default NoteBody

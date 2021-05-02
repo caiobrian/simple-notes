@@ -1,20 +1,17 @@
-import { useStateValue } from '../../contexts/state'
+import { useRecoilState } from 'recoil'
+import { noteTitleState } from '../../atoms/notes'
 
 import * as S from './styles'
 
-const PostTitle = () => {
-  const [state, dispatch] = useStateValue()
+const NoteTitle = () => {
+  const [noteTitleEdit, setNoteTitleEdit] = useRecoilState(noteTitleState)
 
-  const handleTitle = (e) =>
-    dispatch({
-      type: 'WRITE_TITLE',
-      payload: e.target.value
-    })
+  const handleTitle = (e) => setNoteTitleEdit(e.target.value)
 
   return (
     <S.Container>
       <S.TextArea
-        value={state.title}
+        value={noteTitleEdit}
         onChange={handleTitle}
         type="text"
         id="article-form-title"
@@ -28,4 +25,4 @@ const PostTitle = () => {
   )
 }
 
-export default PostTitle
+export default NoteTitle

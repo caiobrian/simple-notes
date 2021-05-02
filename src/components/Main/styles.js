@@ -25,4 +25,9 @@ export const Main = styled.main`
 `
 export const WrapperButton = styled.div`
   width: 700px;
+  display: flex;
+
+  > button {
+    margin-right: 15px;
+  }
 `

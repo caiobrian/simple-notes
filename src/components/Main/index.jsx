@@ -1,46 +1,46 @@
-import { useReducer } from 'react'
+import { useResetRecoilState } from 'recoil'
+import { noteTitleState, noteBodyState } from '../../atoms/notes'
+
 import { ToastContainer } from 'react-toastify'
-
-import { StateProvider } from '../../contexts/state'
-import { initialTextState, textReducer } from '../../reducer/textReducer'
-
 import 'react-toastify/dist/ReactToastify.css'
 
 import Button from '../Button'
 import Divider from '../Divider'
-import PostTitle from '../PostTitle'
-import PostBody from '../PostBody'
+import NoteBody from '../NoteBody'
+import NoteTitle from '../NoteTitle'
 import WordCounter from '../WordCounter'
 
 import * as S from './styles'
-import { initialToastState, toastReducer } from '../../reducer/toastReducer'
 
 const Main = () => {
-  // eslint-disable-next-line no-unused-vars
-  const [_, dispatch] = useReducer(toastReducer, initialToastState)
+  const resetTitle = useResetRecoilState(noteTitleState)
+  const resetBody = useResetRecoilState(noteBodyState)
 
-  const test = () => dispatch({ type: 'SUCCESS' })
+  const handleResetNote = () => {
+    resetTitle(), resetBody()
+  }
 
   return (
-    <>
-      <StateProvider initialState={initialTextState} reducer={textReducer}>
-        <S.Container>
-          <S.Main>
-            <PostTitle />
-            <Divider />
-            <PostBody />
-          </S.Main>
+    <S.Container>
+      <S.Main>
+        <NoteTitle />
+        <Divider />
+        <NoteBody />
+      </S.Main>
 
-          <WordCounter />
+      <WordCounter />
 
-          <S.WrapperButton>
-            <Button handleClick={test}>Salvar</Button>
-          </S.WrapperButton>
+      <S.WrapperButton>
+        <Button color="primary" handleClick={() => {}}>
+          Salvar Nota
+        </Button>
+        <Button color="alert" handleClick={handleResetNote}>
+          Limpar Nota
+        </Button>
+      </S.WrapperButton>
 
-          <ToastContainer pauseOnFocusLoss={false} pauseOnHover={false} />
-        </S.Container>
-      </StateProvider>
-    </>
+      <ToastContainer pauseOnFocusLoss={false} pauseOnHover={false} />
+    </S.Container>
   )
 }
 

@@ -1,23 +1,24 @@
 import { useCallback, useEffect, useState } from 'react'
-import { useStateValue } from '../../contexts/state'
+import { useRecoilValue } from 'recoil'
+import { noteBodyState } from '../../atoms/notes'
 import { removeSpacesFromText } from '../../utils/removeWhiteSpaces'
 
 import * as S from './styles'
 
 const WordCounter = () => {
   const [wordCount, setWordCount] = useState(0)
-  const [state, _] = useStateValue()
+  const noteBody = useRecoilValue(noteBodyState)
 
   const handleCount = useCallback(() => {
-    const withoutSpaces = removeSpacesFromText(state.body)
+    const withoutSpaces = removeSpacesFromText(noteBody)
     const countCharacters = withoutSpaces.split('').length
 
     return countCharacters
-  }, [state])
+  }, [noteBody])
 
   useEffect(() => {
     setWordCount(handleCount())
-  }, [state, handleCount])
+  }, [noteBody, handleCount])
 
   return (
     <S.Container>
