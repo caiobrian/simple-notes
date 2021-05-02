@@ -37,7 +37,7 @@ const Main = () => {
             <Button handleClick={test}>Salvar</Button>
           </S.WrapperButton>
 
-          <ToastContainer />
+          <ToastContainer pauseOnFocusLoss={false} pauseOnHover={false} />
         </S.Container>
       </StateProvider>
     </>
