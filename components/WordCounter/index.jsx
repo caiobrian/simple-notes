@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { useStateValue } from '../../contexts/state'
 import { removeSpacesFromText } from '../../utils/removeWhiteSpaces'
 
@@ -11,11 +11,11 @@ const WordCounter = () => {
   const handleCount = useCallback(() => {
     const withoutSpaces = removeSpacesFromText(state.body)
     const countCharacters = withoutSpaces.split('' ,).length
-    
+
     return countCharacters;
   }, [state])
 
-  useEffect(() => { 
+  useEffect(() => {
     setWordCount(handleCount())
   }, [state, handleCount]);
 
