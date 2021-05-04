@@ -11,8 +11,8 @@ export const Container = styled.div`
 `
 
 export const Main = styled.main`
-  width: 700px;
-  min-width: 300px;
+  width: 95%;
+  max-width: 900px;
   max-height: 800px;
   min-height: 600px;
   display: flex;
@@ -24,7 +24,8 @@ export const Main = styled.main`
   overflow: auto;
 `
 export const WrapperButton = styled.div`
-  width: 700px;
+  width: 95%;
+  max-width: 900px;
   display: flex;
 
   > button {
