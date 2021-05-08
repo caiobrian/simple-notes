@@ -8,8 +8,6 @@ import * as S from './styles'
 const AllNotesPreview = () => {
   const { allNotes } = useNotes()
 
-  if (!allNotes?.length) return <div></div>
-
   return (
     <S.Container>
       {allNotes.map(({ id, title, content, created_at: createdAt }) => (

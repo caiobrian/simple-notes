@@ -8,6 +8,7 @@ export const Container = styled.div`
   min-width: 200px;
   height: 130px;
   cursor: pointer;
+  background-color: ${theme.colors.white};
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 `
 export const Title = styled.h1`
