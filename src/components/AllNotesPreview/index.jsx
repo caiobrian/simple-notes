@@ -6,9 +6,10 @@ import NotePreview from '../NotePreview'
 import * as S from './styles'
 
 const AllNotesPreview = () => {
-  const { allNotes } = useNotes()
+  const { allNotes, isLoading } = useNotes()
 
   if (!allNotes?.length) return <div></div>
+  if (isLoading) return <h1>Loading...</h1>
 
   return (
     <S.Container>
