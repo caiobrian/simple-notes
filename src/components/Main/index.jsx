@@ -1,7 +1,7 @@
-import { useResetRecoilState } from 'recoil'
-import { noteTitleState, noteBodyState } from '../../atoms/notes'
-
 import { ToastContainer } from 'react-toastify'
+
+import { useNotes } from '../../hooks/useNotesQuery'
+
 import 'react-toastify/dist/ReactToastify.css'
 
 import Button from '../Button'
@@ -11,17 +11,17 @@ import NoteTitle from '../NoteTitle'
 import WordCounter from '../WordCounter'
 
 import * as S from './styles'
+import { useNotesState } from '../../hooks/useNotesState'
+import AllNotesPreview from '../AllNotesPreview'
 
 const Main = () => {
-  const resetTitle = useResetRecoilState(noteTitleState)
-  const resetBody = useResetRecoilState(noteBodyState)
-
-  const handleResetNote = () => {
-    resetTitle(), resetBody()
-  }
+  const { addNote } = useNotes()
+  const { handleResetNote } = useNotesState()
 
   return (
     <S.Container>
+      <AllNotesPreview />
+
       <S.Main>
         <NoteTitle />
         <Divider />
@@ -31,7 +31,7 @@ const Main = () => {
       <WordCounter />
 
       <S.WrapperButton>
-        <Button color="primary" handleClick={() => {}}>
+        <Button color="primary" handleClick={addNote}>
           Salvar Nota
         </Button>
         <Button color="alert" handleClick={handleResetNote}>
