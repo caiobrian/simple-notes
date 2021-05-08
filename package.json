@@ -15,16 +15,19 @@
     ]
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "date-fns": "^2.21.2",
     "next": "10.2.0",
     "next-auth": "^3.19.8",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.2.0",
+    "react-modal": "^3.13.1",
     "react-textarea-autosize": "^8.3.2",
     "react-toastify": "^7.0.4",
     "recoil": "^0.2.0",
-    "styled-components": "^5.2.3"
+    "styled-components": "^5.2.3",
+    "swr": "^0.5.6"
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.12.0",
